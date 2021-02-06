@@ -23,7 +23,6 @@ function createBoxes(min, max) {
 
 		for (let j = min; j <= max; j++) {
 			var box = document.createElement('INPUT');
-			box.setAttribute('class', 'in');
 			box.setAttribute('type', 'text');
 			var boxId = i + 'x' + j;
 			box.setAttribute('id', boxId);
@@ -57,14 +56,32 @@ function createRowHeaders(min, max) {
 
 // Button Functions
 function start() {
-	var selectAllEmptyBoxes = document.getElementsByClassName('in');
-	for (var i = 0; i < selectAllEmptyBoxes.length; i++) {
-		selectAllEmptyBoxes[i].value = "";
+	var emptyBoxes = document.querySelectorAll('input');
+	for (var i = 0; i < emptyBoxes.length; i++) {
+		emptyBoxes[i].value = "";
 	}
+	startBtn.classList.add('hidden');
+	submitBtn.classList.remove('hidden');
 }
 
 function submit() {
-	var empt;
+	var answerElements = document.querySelectorAll('.box');
+	
+	for (var k = 0; k < answerElements.length; k++) {
+		var correctAnswer = answerElements[k].getAttribute('data-value');
+
+		if (answerElements[k].value == correctAnswer) {
+			score++;
+			answerElements[k].classList.add('green');
+		}
+		else {
+			answerElements[k].classList.add('red');
+		}
+	}
+
+	submitBtn.classList.add('hidden');
+	resetBtn.classList.remove('hidden');
+	scoreElement.innerHTML = 'Score: ' + score + '%';
 }
 
 function reset() {
