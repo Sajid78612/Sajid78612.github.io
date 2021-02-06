@@ -1,15 +1,20 @@
+// Headers and table
 var boxes = document.getElementById('boxes');
 var columnHeaders = document.getElementById('column-headers');
 var rowHeaders = document.getElementById('row-headers');
-var instructions = document.getElementById('instructions');
-var quizBtn = document.getElementById('quiz-button');
-var resetBtn = document.getElementById('reset-button');
-var review = document.getElementById('review');
-var scoreElement = document.getElementById('score');
-var submitBtn = document.getElementById('submit-button');
-var score = 0;
-var timerVar;
 
+// Buttons 
+var startBtn = document.getElementById('start-button');
+var resetBtn = document.getElementById('reset-button');
+var submitBtn = document.getElementById('submit-button');
+
+// Variables
+var score = 0;
+var scoreValue = 0;
+var timerVar;
+var totalSeconds;
+
+// Create Tables and Headers
 function createBoxes(min, max) {
 	createColumnHeaders(min, max);
 	createRowHeaders(min, max);
@@ -18,6 +23,7 @@ function createBoxes(min, max) {
 
 		for (let j = min; j <= max; j++) {
 			var box = document.createElement('INPUT');
+			box.setAttribute('class', 'in');
 			box.setAttribute('type', 'text');
 			var boxId = i + 'x' + j;
 			box.setAttribute('id', boxId);
@@ -49,53 +55,32 @@ function createRowHeaders(min, max) {
 	}
 }
 
-function startQuiz() {
-	var emptyBoxes = document.querySelectorAll('input');
-
-	for (var h = 0; h < emptyBoxes.length; h++) {
-		emptyBoxes[h].value = "";
+// Button Functions
+function start() {
+	var selectAllEmptyBoxes = document.getElementsByClassName('in');
+	for (var i = 0; i < selectAllEmptyBoxes.length; i++) {
+		selectAllEmptyBoxes[i].value = "";
 	}
-
-	review.classList.add('hidden');
-	instructions.classList.remove('hidden');
-	quizBtn.classList.add('hidden');
-	submitBtn.classList.remove('hidden');
 }
 
 function submit() {
-	var answerElements = document.querySelectorAll('.box');
-
-	for (var k = 0; k < answerElements.length; k++) {
-		var correctAnswer = answerElements[k].getAttribute('data-value');
-
-		if (answerElements[k].value == correctAnswer) {
-			score++;
-			answerElements[k].classList.add('green');
-		} else {
-			answerElements[k].classList.add('red');
-		}
-	}
-
-	submitBtn.classList.add('hidden');
-	resetBtn.classList.remove('hidden');
-	instructions.classList.add('hidden');
-	score = (score / 144) * 100;
-	scoreElement.innerHTML = 'Score: ' + score.toFixed(1) + '%';
+	var empt;
 }
 
 function reset() {
 	window.location.reload();
 }
 
+// Timer functionality
 function startTimer() {
 	timerVar = setInterval(countTimer, 1000);
-	var totalSeconds = 0;
+	totalSeconds = 0;
 
 	function countTimer() {
 		++totalSeconds;
 		var hour = Math.floor(totalSeconds / 3600);
-		var minute = Math.floor((totalSeconds - hour * 3600) / 60);
-		var seconds = totalSeconds - (hour * 3600 + minute * 60);
+		minute = Math.floor((totalSeconds - hour * 3600) / 60);
+		seconds = totalSeconds - (hour * 3600 + minute * 60);
 		if (hour < 10)
 			hour = "0" + hour;
 		if (minute < 10)
@@ -110,4 +95,5 @@ function stopTimer() {
 	clearInterval(timerVar);
 }
 
-createBoxes(1, 12);
+// Main
+createBoxes(1,12);
