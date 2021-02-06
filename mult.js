@@ -8,6 +8,7 @@ var review = document.getElementById('review');
 var scoreElement = document.getElementById('score');
 var submitBtn = document.getElementById('submit-button');
 var score = 0;
+var timerVar;
 
 function createBoxes(min, max) {
 	createColumnHeaders(min, max);
@@ -63,15 +64,14 @@ function startQuiz() {
 
 function submit() {
 	var answerElements = document.querySelectorAll('.box');
-	
+
 	for (var k = 0; k < answerElements.length; k++) {
 		var correctAnswer = answerElements[k].getAttribute('data-value');
 
 		if (answerElements[k].value == correctAnswer) {
 			score++;
 			answerElements[k].classList.add('green');
-		}
-		else {
+		} else {
 			answerElements[k].classList.add('red');
 		}
 	}
@@ -79,11 +79,35 @@ function submit() {
 	submitBtn.classList.add('hidden');
 	resetBtn.classList.remove('hidden');
 	instructions.classList.add('hidden');
-	scoreElement.innerHTML = 'Score: ' + score + '%';
+	score = (score / 144) * 100;
+	scoreElement.innerHTML = 'Score: ' + score.toFixed(1) + '%';
 }
 
 function reset() {
 	window.location.reload();
 }
 
-createBoxes(1,12);
+function startTimer() {
+	timerVar = setInterval(countTimer, 1000);
+	var totalSeconds = 0;
+
+	function countTimer() {
+		++totalSeconds;
+		var hour = Math.floor(totalSeconds / 3600);
+		var minute = Math.floor((totalSeconds - hour * 3600) / 60);
+		var seconds = totalSeconds - (hour * 3600 + minute * 60);
+		if (hour < 10)
+			hour = "0" + hour;
+		if (minute < 10)
+			minute = "0" + minute;
+		if (seconds < 10)
+			seconds = "0" + seconds;
+		document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+	}
+}
+
+function stopTimer() {
+	clearInterval(timerVar);
+}
+
+createBoxes(1, 12);

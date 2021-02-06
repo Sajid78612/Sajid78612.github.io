@@ -33,8 +33,10 @@
 			<div class="boxes flex-container" id="boxes"></div>
 		</div>
 
-		<button class="button" id="quiz-button" onclick="startQuiz()">Quiz</button>
-		<button class="button hidden" id="submit-button" onclick="submit()">Submit</button>
+		<div id="timer"></div>
+
+		<button class="button" id="quiz-button" onclick="startQuiz(); startTimer()">Quiz</button>
+		<button class="button hidden" id="submit-button" onclick="submit(); stopTimer()">Submit</button>
 		<button class="button hidden" id="reset-button" onclick="reset()">Reset</button>
 	</div>
 
