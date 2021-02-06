@@ -1,20 +1,17 @@
-// Headers and table
 var boxes = document.getElementById('boxes');
 var columnHeaders = document.getElementById('column-headers');
 var rowHeaders = document.getElementById('row-headers');
-
-// Buttons 
-var startBtn = document.getElementById('start-button');
+var instructions = document.getElementById('instructions');
+var quizBtn = document.getElementById('quiz-button');
 var resetBtn = document.getElementById('reset-button');
+var review = document.getElementById('review');
+var scoreElement = document.getElementById('score');
 var submitBtn = document.getElementById('submit-button');
-
-// Variables
+var accElement = document.getElementById('acc');
 var score = 0;
-var scoreValue = 0;
-var timerVar;
+var acc = 0;
 var totalSeconds;
 
-// Create Tables and Headers
 function createBoxes(min, max) {
 	createColumnHeaders(min, max);
 	createRowHeaders(min, max);
@@ -54,13 +51,16 @@ function createRowHeaders(min, max) {
 	}
 }
 
-// Button Functions
-function start() {
+function startQuiz() {
 	var emptyBoxes = document.querySelectorAll('input');
-	for (var i = 0; i < emptyBoxes.length; i++) {
-		emptyBoxes[i].value = "";
+
+	for (var h = 0; h < emptyBoxes.length; h++) {
+		emptyBoxes[h].value = "";
 	}
-	startBtn.classList.add('hidden');
+
+	review.classList.add('hidden');
+	instructions.classList.remove('hidden');
+	quizBtn.classList.add('hidden');
 	submitBtn.classList.remove('hidden');
 }
 
@@ -81,14 +81,24 @@ function submit() {
 
 	submitBtn.classList.add('hidden');
 	resetBtn.classList.remove('hidden');
-	scoreElement.innerHTML = 'Score: ' + score + '%';
+	instructions.classList.add('hidden');
+
+	acc = (score/144) * 100;
+	score = 20000 - (totalSeconds*10);
+	if(score < 0) {
+		score = 0;
+	}
+	if(acc < 100) {
+		score = acc*1000;
+	}
+	scoreElement.innerHTML = 'Score: ' + score.toFixed(0);
+	accElement.innerHTML = 'Accuracy: ' + acc.toFixed(1) + '%';
 }
 
 function reset() {
 	window.location.reload();
 }
 
-// Timer functionality
 function startTimer() {
 	timerVar = setInterval(countTimer, 1000);
 	totalSeconds = 0;
@@ -112,5 +122,4 @@ function stopTimer() {
 	clearInterval(timerVar);
 }
 
-// Main
 createBoxes(1,12);
