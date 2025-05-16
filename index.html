@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -30,6 +29,47 @@
 			
 			.project-card h3 {
 				color: #67d6ef;
+			}
+			
+			/* Fix button visibility */
+			.button, input[type="submit"], input[type="reset"], input[type="button"], button {
+				background-color: #30a7c7 !important;
+				color: #ffffff !important;
+				border-radius: 4px !important;
+				box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2) !important;
+				border: 1px solid rgba(255, 255, 255, 0.2) !important;
+				transition: all 0.3s ease !important;
+			}
+			
+			.button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover {
+				background-color: #67d6ef !important;
+				color: #1a3c4d !important;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+			}
+			
+			/* Navigation buttons styling */
+			#nav {
+				background-color: #1a3c4d !important;
+				/* Remove border-radius to prevent white corner issues */
+				border-radius: 0 !important;
+				border-top-left-radius: 0 !important;
+				border-top-right-radius: 0 !important;
+			}
+			
+			#nav ul li a {
+				color: #ffffff !important;
+				transition: all 0.3s ease !important;
+			}
+			
+			#nav ul li a:hover {
+				background-color: rgba(48, 167, 199, 0.3) !important;
+			}
+			
+			#nav ul li a.active {
+				background-color: #30a7c7 !important;
+				color: #ffffff !important;
+				font-weight: bold !important;
 			}
 			
 			.career-progression {
