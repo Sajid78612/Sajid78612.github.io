@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -7,6 +8,30 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
+			/* Just changing the background color and gradient */
+			body {
+				background-color: #2a6d82 !important;
+				background-image: url("images/overlay.png"), linear-gradient(45deg, #30a7c7 15%, #274c6b 85%) !important;
+			}
+			
+			/* Coordinating colors for our custom components */
+			.career-progression .timeline::after {
+				background-color: #30a7c7;
+			}
+			
+			.career-card h3 {
+				color: #67d6ef;
+			}
+			
+			.tech-tag {
+				background-color: rgba(48, 167, 199, 0.3);
+				border-radius: 15px;
+			}
+			
+			.project-card h3 {
+				color: #67d6ef;
+			}
+			
 			.career-progression {
 				margin: 2em 0;
 			}
@@ -19,7 +44,6 @@
 				content: '';
 				position: absolute;
 				width: 6px;
-				background-color: #5e42a6;
 				top: 0;
 				bottom: 0;
 				left: 50%;
@@ -40,10 +64,6 @@
 			.right {
 				left: 50%;
 			}
-			.career-card h3 {
-				margin-top: 0;
-				color: #e2c1ff;
-			}
 			.career-card p {
 				margin-bottom: 0;
 			}
@@ -53,9 +73,7 @@
 				margin-top: 12px;
 			}
 			.tech-tag {
-				background-color: rgba(94, 66, 166, 0.3);
 				padding: 5px 10px;
-				border-radius: 15px;
 				margin-right: 8px;
 				margin-bottom: 8px;
 				font-size: 0.8em;
@@ -92,6 +110,7 @@
 				text-align: center;
 				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 				padding-bottom: 10px;
+				color: #67d6ef;
 			}
 			@media screen and (max-width: 768px) {
 				.career-progression .timeline::after {
