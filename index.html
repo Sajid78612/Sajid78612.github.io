@@ -1,16 +1,114 @@
 <!DOCTYPE HTML>
-<!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Muhammad Sajid Alam</title>
+		<title>Muhammad Sajid Alam | Senior Software Engineer</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.career-progression {
+				margin: 2em 0;
+			}
+			.career-progression .timeline {
+				position: relative;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			.career-progression .timeline::after {
+				content: '';
+				position: absolute;
+				width: 6px;
+				background-color: #5e42a6;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+				margin-left: -3px;
+			}
+			.career-card {
+				padding: 20px 30px;
+				position: relative;
+				background-color: rgba(255, 255, 255, 0.1);
+				width: 44%;
+				border-radius: 6px;
+				margin-bottom: 20px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+			.left {
+				left: 0;
+			}
+			.right {
+				left: 50%;
+			}
+			.career-card h3 {
+				margin-top: 0;
+				color: #e2c1ff;
+			}
+			.career-card p {
+				margin-bottom: 0;
+			}
+			.tech-tags {
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: 12px;
+			}
+			.tech-tag {
+				background-color: rgba(94, 66, 166, 0.3);
+				padding: 5px 10px;
+				border-radius: 15px;
+				margin-right: 8px;
+				margin-bottom: 8px;
+				font-size: 0.8em;
+			}
+			.project-card {
+				background-color: rgba(255, 255, 255, 0.05);
+				border-radius: 8px;
+				padding: 20px;
+				margin-bottom: 25px;
+				transition: transform 0.3s ease;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+			.project-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			}
+			.skills-container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 10px;
+				margin: 20px 0;
+			}
+			.skill-category {
+				flex-basis: 30%;
+				min-width: 250px;
+				background-color: rgba(255, 255, 255, 0.05);
+				border-radius: 8px;
+				padding: 15px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+			.skill-category h3 {
+				margin-top: 0;
+				text-align: center;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				padding-bottom: 10px;
+			}
+			@media screen and (max-width: 768px) {
+				.career-progression .timeline::after {
+					left: 31px;
+				}
+				.career-card {
+					width: 80%;
+					left: 60px;
+				}
+				.right {
+					left: 60px;
+				}
+				.skill-category {
+					flex-basis: 100%;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -20,16 +118,19 @@
 				<!-- Header -->
 					<header id="header" class="alt">
 						<h1>Muhammad Sajid Alam</h1>
-						<p>Learn about me and the major projects I have completed.<br /></p>
+						<p>Senior Software Engineer @ QuantumBlack, AI by McKinsey<br />
+						Python | React | Cloud | Kedro</p>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">Introduction</a></li>
-							<li><a href="#first">Projects</a></li>
-							<li><a href="#second">Publication</a></li>
-							<li><a href="#cta">Education</a></li>
+							<li><a href="#intro" class="active">About Me</a></li>
+							<li><a href="#career" class="active">Career</a></li>
+							<li><a href="#projects">Projects</a></li>
+							<li><a href="#skills">Skills</a></li>
+							<li><a href="#publication">Publication</a></li>
+							<li><a href="#education">Education</a></li>
 						</ul>
 					</nav>
 
@@ -43,76 +144,208 @@
 										<header class="major">
 											<h2>About Me</h2>
 										</header>
-										<p> Hi my name is Sajid, I am currently a Software Engineer at QuantumBlack as part of the Kedro team. Kedro is an open source python library designed to provide a framework for data engineers, data scientists and machine learning engineers a way to apply software engineering best practices when creating pipelines. I'm a recent MSc graduate looking to apply my skills in software engineering. My time at university has allowed me to gain key skills for this role through the various projects and experiences. 
-											You can view some of these below. During my industrial placment year I worked as a Software Engineer Intern at McAfee, the world's largest dedicated technology security company. This experience
-											equipped with many skills including Linux, Perl, C++ and SVN.</p>
+										<p>I'm a Senior Software Engineer at QuantumBlack, AI by McKinsey, where I contribute to Kedro - an open-source Python framework that enables data scientists and engineers to build robust, maintainable, and modular data pipelines using software engineering best practices. My journey with QuantumBlack began in 2021 after completing my MSc in AI through their scholarship program, and I've since progressed from Software Engineer I to my current senior role.</p>
+										<p>With a background in both AI research and software engineering, I specialize in developing scalable solutions across the full technology stack. I'm passionate about architectural design, cloud-native implementations, and fostering community growth through knowledge sharing and mentorship.</p>
+										<div class="tech-tags">
+											<span class="tech-tag">Python</span>
+											<span class="tech-tag">React</span>
+											<span class="tech-tag">Redux</span>
+											<span class="tech-tag">Kedro</span>
+											<span class="tech-tag">Cloud Architecture</span>
+											<span class="tech-tag">AI</span>
+										</div>
 									</div>
-									<span class="image"><img src="images/selfie.png" alt="" /></span>
+									<span class="image"><img src="images/selfie.png" alt="Sajid Alam" /></span>
 								</div>
 							</section>
 
-						<!-- First Section -->
-							<section id="first" class="main special">
+						<!-- Career Section -->
+							<section id="career" class="main">
+								<header class="major">
+									<h2>Career Progression</h2>
+								</header>
+								
+								<div class="career-progression">
+									<div class="timeline">
+										<div class="career-card right">
+											<h3>Senior Software Engineer I</h3>
+											<h4>QuantumBlack, AI by McKinsey | May 2025 - Present</h4>
+											<p>Leading complex architectural enhancements for Kedro's ecosystem, focusing on cloud integration and performance optimization. Mentoring junior engineers and facilitating knowledge-sharing sessions across the organization.</p>
+											<div class="tech-tags">
+												<span class="tech-tag">Kedro Framework/Viz</span>
+												<span class="tech-tag">React</span>
+												<span class="tech-tag">Python</span>
+												<span class="tech-tag">Redux</span>
+											</div>
+										</div>
+										<div class="career-card left">
+											<h3>Software Engineer II</h3>
+											<h4>QuantumBlack, AI by McKinsey | Jan 2024 - May 2025</h4>
+											<p>Designed and implemented cloud protocol support for seamless integration with AWS S3, Azure Blob Storage, and Google Cloud Storage. Led refactoring of Kedro-Viz flowchart models to enhance maintainability and scalability.</p>
+											<div class="tech-tags">
+												<span class="tech-tag">Cloud Architecture</span>
+												<span class="tech-tag">Frontend Architecture</span>
+												<span class="tech-tag">Pipeline Optimization</span>
+											</div>
+										</div>
+										<div class="career-card right">
+											<h3>Software Engineer I</h3>
+											<h4>QuantumBlack, AI by McKinsey | Sept 2021 - Dec 2023</h4>
+											<p>Developed and maintained core components of the Kedro framework. Implemented Write-Ahead Logging (WAL) for SQLite to resolve complex database locking issues in enterprise environments.</p>
+											<div class="tech-tags">
+												<span class="tech-tag">Kedro Framework</span>
+												<span class="tech-tag">Python</span>
+												<span class="tech-tag">Databricks</span>
+												<span class="tech-tag">CircleCI</span>
+												<span class="tech-tag">GitHub</span>
+											</div>
+										</div>
+										<div class="career-card left">
+											<h3>AI Scholarship Recipient</h3>
+											<h4>QuantumBlack & Office of AI | 2020 - 2021</h4>
+											<p>Awarded full scholarship to pursue MSc in Artificial Intelligence at Queen Mary University of London, including tuition fees and living expenses. Completed internship at QuantumBlack following graduation.</p>
+										</div>
+									</div>
+								</div>
+							</section>
+
+						<!-- Projects Section -->
+							<section id="projects" class="main special">
 								<header class="major">
 									<h2>Projects</h2>
 								</header>
-								<ul class="features">
-									<li>
-										<span class="image"><a href="rhneat.html"><img src="images/ann.png" width="300px" length="300px" alt=""/></a></span>
-										<h3><b><a href="rhneat.html">rhNEAT</a></b></h3>
-										<p>My final year project invovled creating a new genetic algorithm by taking concepts from two existing algorithms namely, <a href="https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies">NEAT</a> and <a href="https://arxiv.org/pdf/2003.12331.pdf">RHEA</a>,
-										to create rhNEAT, Rolling Horizon NeuroEvolution of Augmenting Topologies, a new<a href="https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/61628/Perez%20Analysis%20of%20Statistical%202019%20Accepted.pdf?sequence=2&isAllowed=y"> Statistical Forward Planning (SFP) method </a>.</p>
-										<a href="rhneat.html" class="button">Read More</a>
-									</li>
-									<li>
-										<span class="image"><a href="mcafee.html"><img src="images/mcafee.jpg" width="375px" length="375px" alt=""/></a></span>
-										<br/>
-										<br/>
-										<br/>
-										<h3><b><a href="mcafee.html">McAfee Competition</a></b></h3>										
-										<p>During my McAfee internship I was given the oppurtunity to participate in the annual McAfee School Coding Competition. Each intern was assigned a group of Year 12 students to create the best video game. I successully led my team to first place with our arcade style Connect4 game.</p>
-										<a href="mcafee.html" class="button">Read More</a>
-									</li>
-									<li>
-										<span class="image"><a href="rotb.html"><img src="images/boxgame.png" width="285px" length="285px" alt=""/></a></span>
-										<h3><b><a href="rotb.html">Revenge of the Box</a></b></h3>
-										<p>As part of my Game Development module I led a team to create a 3D video game using the Unity engine and C#. Revenge of the Box is a third-person, isometric stealth strategy game. Players control a box that carries out several missions to infiltrate the ominous Company A.</p>									
-										<a href="rotb.html" class="button">Read More</a>										
-									</li>
-								</ul>
-								<footer class="major">
-								</footer>
+
+								<div class="project-card">
+									<h3>Kedro Framework Enhancements</h3>
+									<p>As a maintainer of Kedro, I've led significant improvements across the ecosystem:</p>
+									<ul>
+										<li>Engineered Write-Ahead Logging for SQLite to resolve Azure ML environment issues</li>
+										<li>Designed multi-cloud dataset configurations for AWS, Azure, and GCP</li>
+										<li>Refactored Kedro-Viz flowchart architecture to improve maintainability</li>
+										<li>Enhanced Kedro-VSCode with real-time dataset validation</li>
+										<li>Optimized CI/CD pipelines for stability and performance</li>
+									</ul>
+									<a href="https://github.com/kedro-org/kedro" target="_blank" class="button small">View Kedro</a>
+								</div>
+
+								<div class="project-card">
+									<h3>rhNEAT: Rolling Horizon NeuroEvolution</h3>
+									<p>Created a new Statistical Forward Planning method by combining NEAT and RHEA algorithms for general video game playing. Published research at the IEEE Conference on Games 2020.</p>
+									<a href="rhneat.html" class="button small">Learn More</a>
+									<a href="https://github.com/GAIGResearch/rhNEAT" target="_blank" class="button small">View Code</a>
+								</div>
+
+								<div class="project-card">
+									<h3>McAfee School Coding Competition</h3>
+									<p>Led a team of Year 12 students to create an arcade-style Connect 4 game, winning first place in the competition. Implemented agile practices and taught software engineering principles.</p>
+									<a href="mcafee.html" class="button small">Learn More</a>
+								</div>
+
+								<div class="project-card">
+									<h3>Revenge of the Box</h3>
+									<p>Developed a 3D stealth strategy game using Unity and C#, featuring multiple camera perspectives and stealth-based gameplay mechanics.</p>
+									<a href="rotb.html" class="button small">Learn More</a>
+								</div>
 							</section>
 
-						<!-- Second Section -->
-							<section id="second" class="main special">
+						<!-- Skills Section -->
+							<section id="skills" class="main special">
+								<header class="major">
+									<h2>Technical Skills</h2>
+								</header>
+								
+								<div class="skills-container">
+									<div class="skill-category">
+										<h3>Backend & Database</h3>
+										<ul>
+											<li>Python Development</li>
+											<li>API Design & Implementation</li>
+											<li>Database Optimization</li>
+											<li>ETL Pipeline Development</li>
+											<li>Performance Tuning</li>
+											<li>Dependency Management</li>
+										</ul>
+									</div>
+									
+									<div class="skill-category">
+										<h3>Frontend</h3>
+										<ul>
+											<li>React.js</li>
+											<li>Redux</li>
+											<li>Frontend Architecture</li>
+											<li>UI/UX Optimization</li>
+											<li>Component Design</li>
+											<li>Responsive Interfaces</li>
+										</ul>
+									</div>
+									
+									<div class="skill-category">
+										<h3>Cloud & DevOps</h3>
+										<ul>
+											<li>AWS, Azure, GCP</li>
+											<li>CI/CD Pipelines</li>
+											<li>Docker</li>
+											<li>Git/GitHub</li>
+											<li>Cloud Architecture</li>
+											<li>CircleCI</li>
+										</ul>
+									</div>
+									
+									<div class="skill-category">
+										<h3>AI & ML</h3>
+										<ul>
+											<li>Machine Learning</li>
+											<li>Databricks</li>
+											<li>Neural Networks</li>
+											<li>Evolutionary Algorithms</li>
+											<li>AI Integration</li>
+											<li>GitHub Copilot</li>
+										</ul>
+									</div>
+									
+									<div class="skill-category">
+										<h3>Leadership</h3>
+										<ul>
+											<li>Technical Mentorship</li>
+											<li>Knowledge Sharing</li>
+											<li>Agile Methodologies</li>
+											<li>Project Management</li>
+											<li>Code Reviews</li>
+											<li>Community Building</li>
+										</ul>
+									</div>
+								</div>
+							</section>
+
+						<!-- Publication Section -->
+							<section id="publication" class="main special">
 								<header class="major">
 									<h2>Publication</h2>
-									<span class="image"><img src="images/cog.png" width="250px" length="250px" alt=""/></span>
-									<p>As part of the 2020 IEEE Conference on Games a condensed version of my dissertation
-										was submitted for peer review. The paper was accepted and will be
-										published in the conference in August 2020. 
-										I co-authored this publication with my supervisor Diego Perez-Liebana and Raluca D. Gaina. Click
-										<a href="rhneat.pdf">here</a> to read this paper.
-									</p>
+									<span class="image"><img src="images/cog.png" width="250px" length="250px" alt="IEEE Conference on Games" /></span>
+									<p>My research on a new Statistical Forward Planning method was published at the 2020 IEEE Conference on Games. I co-authored this publication with Diego Perez-Liebana and Raluca D. Gaina.</p>
 									<p class="content"><b>Abstract:</b> This paper presents a new Statistical Forward Planning (SFP) method, Rolling Horizon NeuroEvolution of Augmenting Topologies (rhNEAT). Unlike traditional Rolling Horizon Evolution, where an evolutionary algorithm is in charge of evolving a sequence of actions, rhNEAT evolves weights and connections of a neural network in real-time, planning several steps ahead before returning an action to execute in the game.</p>
 								</header>
 								<footer class="major">
 									<ul class="actions special">
-										<li><a href="rhneat.pdf" class="button" download>Download</a></li>
+										<li><a href="rhneat.pdf" class="button" download>Download Paper</a></li>
 									</ul>
 								</footer>
 							</section>
 
-						<!-- Get Started -->
-							<section id="cta" class="main special">
+						<!-- Education Section -->
+							<section id="education" class="main special">
 								<header class="major">
 									<h2>Education</h2>
 									<p><b>Queen Mary University of London:</b>
 									<br/>
-									BSc (Hons) in Computer Science with Industrial Experience: <b>1st class honours</b>
+									MSc in Artificial Intelligence (2020-2021): <b>Merit</b>
 									<br/>
-									MSc (Hons) in Artificial Intelligence: <b>1st class honours</b></p>
+									QuantumBlack & Office of AI Scholarship Recipient
+									<br/><br/>
+									BSc in Computer Science with Industrial Experience (2016-2020): <b>1st Class Honours</b>
+									<br/>
+									Industrial Placement: Software Engineer Intern at McAfee (2018-2019)
+									</p>
 								</header>
 							</section>
 					</div>
@@ -124,16 +357,17 @@
 							<p>"Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking." <b>-Steve Jobs</b></p>
 						</section>
 						<section>
-							<h2>Contact Me</h2>
+							<h2>Connect With Me</h2>
 							<dl class="alt">
 								<dt>Email</dt>
-								<dd><a href="#">sajidalam786@gmail.com</a></dd>
+								<dd><a href="mailto:sajidalam786@gmail.com">sajidalam786@gmail.com</a></dd>
 							</dl>
 							<ul class="icons">								
 								<li><a href="https://www.linkedin.com/in/sajid-alam-b2a228151" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>								
 								<li><a href="https://github.com/Sajid78612" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>							
 							</ul>
-						</section>						
+						</section>
+						<p class="copyright">&copy; 2025 Muhammad Sajid Alam</p>
 					</footer>
 
 			</div>
